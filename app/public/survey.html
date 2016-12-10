@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Just a few Bootstrap overrides to get a numbered list-group with likert scales -->
+  <style type="text/css">
+    .list-group {
+        list-style: decimal inside;
+    }
+    .list-group-item {
+        display: list-item;
+        font-size: large;
+    }   
+    .left_scale {
+        text-align: right;
+    }
+    .right_scale {
+        text-align: left;
+    }
+    #matchPhoto {
+      width: 90%;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="jumbotron">
+      <h1 class="text-center"><span class="glyphicon glyphicon-user"></span>Friend Finder</h1>
+      <hr>
+      <h2 class="text-center">Just answer these few questions to get started!</h2>
+    </div>
+
+    <h3><strong>First We Need to Get a Little Personal Information</strong></h3>
+
+    <h4>Name (Required)</h4>
+    <input type="text" name="name" id="name" class="form-control" required >
+
+    <h4>Link to Photo Image (Required)</h4>
+    <input type="text" name="photoURL" id="photo" class="form-control" required >
+
+    <h3><strong>And Now to Find Out a Little More About You</strong></h3>
+
+    <ol class="list-group">
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I like to get started early in the morning.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Never&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="early" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="early" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="early" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="early" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="early" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> Usually </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I let people cut the queue in front of me.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Never&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="queueing" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="queueing" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="queueing" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="queueing" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="queueing" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> Usually </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I like to attend events which attract large crowds.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Not Very Much&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="crowds" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="crowds" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="crowds" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="crowds" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="crowds" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> A Lot </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I re-view television shows and movies that I enjoyed.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Never&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="repeat" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="repeat" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="repeat" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="repeat" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="repeat" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> Often </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I take spur of the moment weekend trips.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Never&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="trips" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="trips" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="trips" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="trips" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="trips" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> Often </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I enjoy attending sporting events or watching them on television.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Not Very Much&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="sports" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="sports" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="sports" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="sports" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="sports" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> A Lot </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I discuss personal relationships with my friends.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Never&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="relationships" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="relationships" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="relationships" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="relationships" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="relationships" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> Often </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">I enjoy eating out and trying different types of food.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Not Very Much&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="food" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="food" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="food" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="food" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="food" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> A Lot </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">A good sense of humour is very important to me.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Disagree&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="humour" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="humour" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="humour" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="humour" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="humour" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> Agree </div>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <h4 class="list-group-item-heading">The questions on this quiz are really interesting to me.</h4>
+        <div class="row">
+          <div class="col-md-4 left_scale"> Disagree&nbsp&nbsp&nbsp&nbsp&nbsp</div>
+          <div class="col-md-1"><label>1 <input type="radio" name="quiz" value="1" /></label></div>
+          <div class="col-md-1"><label>2 <input type="radio" name="quiz" value="2" /></label></div>
+          <div class="col-md-1"><label>3 <input type="radio" name="quiz" value="3" /></label></div>
+          <div class="col-md-1"><label>4 <input type="radio" name="quiz" value="4" /></label></div>
+          <div class="col-md-1"><label>5 <input type="radio" name="quiz" value="5" /></label></div>
+          <div class="col-md-3 right_scale"> Agree </div>
+        </div>
+      </li>
+    </ol>
+
+    <!-- Submit Button -->
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-check-circle" aria-hidden="true"></i> Submit</button>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/IsmbardPrince/FriendFinder">GitHub Repo</a></p>
+      </div>
+    </footer>
+
+  </div>
+
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h2 class="modal-title"><strong>Meet your new best friend!</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchPhoto" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $("#submit").on("click", function() {
+
+      // stay on this page
+      event.preventDefault();
+
+      // make sure all questions have been answered
+      var msgFillAllFields = "Please make sure you have answered all the questions."
+      if (typeof $("#name").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("#photo").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='early']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='queueing']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='crowds']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='repeat']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='trips']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='sports']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='relationships']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='food']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='humour']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+      if (typeof $("input[name='quiz']:checked").val() === undefined) {alert(msgFillAllFields); return;}
+
+      // collect the new friend data
+      var friendData = {
+        name: $("#name").val(),
+        photo: $("#photo").val(),
+        scores: [
+          $("input[name='early']:checked").val(),
+          $("input[name='queueing']:checked").val(),
+          $("input[name='crowds']:checked").val(),
+          $("input[name='repeat']:checked").val(),
+          $("input[name='trips']:checked").val(),
+          $("input[name='sports']:checked").val(),
+          $("input[name='relationships']:checked").val(),
+          $("input[name='food']:checked").val(),
+          $("input[name='humour']:checked").val(),
+          $("input[name='quiz']:checked").val()
+        ]
+      }
+
+      // post the data to the friends API. 
+      $.post(window.location.origin + "/api/friends", friendData, function(data){
+
+        // Load the best match result into the modal form
+        $("#matchName").text(data.name);
+        $('#matchPhoto').attr("src", data.photoURL);
+
+        // Show the modal with the best match 
+        $("#resultsModal").modal('toggle');
+
+      });
+
+    });
+  </script>
+
+</body>
+</html>
